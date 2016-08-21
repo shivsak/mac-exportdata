@@ -156,7 +156,7 @@ fi
 
 # Zip exportdata Folder
 
-if [ $ALL ] || [ "$1" == "zip" ] || [ "$2" == "zip" ] || [ "$3" == "zip" ] || [ "$4" == "zip" ] || [ "$5" == "zip" ] || [ "$6" == "zip" ]; then
+if [ "$1" == "zip" ] || [ "$2" == "zip" ] || [ "$3" == "zip" ] || [ "$4" == "zip" ] || [ "$5" == "zip" ] || [ "$6" == "zip" ]; then
   echo ""
   echo ""
   echo -e "\033[36m Zipping Files \033[0m"
