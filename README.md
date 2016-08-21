@@ -10,6 +10,8 @@ Bash script to export the following sensitive mac data to a folder or zip file o
 
 • iOS Backups
 
+• WhatsApp
+
 ## Usage
 Open Terminal, navigate to this directory and run `./exportdata.sh [chrome] [ios] [messages] [safari] [whatsapp] [zip]`.
 
