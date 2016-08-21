@@ -2,9 +2,11 @@
 # Export Data script
 # Created by Shiv Sakhuja
 
-# Check arguments
+# Check arguments and explain usage
 if [ $# -gt 5 ]; then
-  echo "Usage: $0 [chrome] [ios] [messages] [safari] [whatsapp]"
+  echo "Usage: "
+  echo "  $0 [chrome] [ios] [messages] [safari] [whatsapp]"
+  echo "  $0 all"
   exit 1
 fi
 
@@ -18,9 +20,14 @@ echo "Beginning export.";
 echo ""
 echo ""
 
+ALL=false
+if "$1" == "all"
+then
+  ALL=true
+fi
 
 # iMessage
-if [ "$1" == "messages" ] || [ "$2" == "messages" ] || [ "$3" == "messages" ] || [ "$4" == "messages" ] || [ "$5" == "messages" ]; then
+if [ $ALL ] || [ "$1" == "messages" ] || [ "$2" == "messages" ] || [ "$3" == "messages" ] || [ "$4" == "messages" ] || [ "$5" == "messages" ]; then
   echo "------------------------------"
   echo -e "\033[36m MESSAGES \033[0m"
   echo ""
@@ -46,7 +53,7 @@ fi
 
 
 # Safari
-if [ "$1" == "safari" ] || [ "$2" == "safari" ] || [ "$3" == "safari" ] || [ "$4" == "safari" ] || [ "$5" == "safari" ]; then
+if [ $ALL ] || [ "$1" == "safari" ] || [ "$2" == "safari" ] || [ "$3" == "safari" ] || [ "$4" == "safari" ] || [ "$5" == "safari" ]; then
   echo "------------------------------"
   echo ""
   echo -e "\033[36m Safari \033[0m"
@@ -71,7 +78,7 @@ fi
 
 
 # Google Chrome
-if [ "$1" == "chrome" ] || [ "$2" == "chrome" ] || [ "$3" == "chrome" ] || [ "$4" == "chrome" ] || [ "$5" == "chrome" ]; then
+if [ $ALL ] || [ "$1" == "chrome" ] || [ "$2" == "chrome" ] || [ "$3" == "chrome" ] || [ "$4" == "chrome" ] || [ "$5" == "chrome" ]; then
   echo "------------------------------"
   echo ""
   echo -e "\033[36m Google Chrome \033[0m"
@@ -97,7 +104,7 @@ fi
 
 
 # WhatsApp
-if [ "$1" == "whatsapp" ] || [ "$2" == "whatsapp" ] || [ "$3" == "whatsapp" ] || [ "$4" == "whatsapp" ] || [ "$5" == "whatsapp" ]; then
+if [ $ALL ] || [ "$1" == "whatsapp" ] || [ "$2" == "whatsapp" ] || [ "$3" == "whatsapp" ] || [ "$4" == "whatsapp" ] || [ "$5" == "whatsapp" ]; then
   echo "------------------------------"
   echo ""
   echo -e "\033[36m WhatsApp \033[0m"
@@ -123,7 +130,7 @@ fi
 
 
 # iOS Backups
-if [ "$1" == "ios" ] || [ "$2" == "ios" ] || [ "$3" == "ios" ] || [ "$4" == "ios" ] || [ "$5" == "ios" ]; then
+if [ $ALL ] || [ "$1" == "ios" ] || [ "$2" == "ios" ] || [ "$3" == "ios" ] || [ "$4" == "ios" ] || [ "$5" == "ios" ]; then
   echo "------------------------------"
   echo ""
   echo -e "\033[36m iOS Backups \033[0m"
@@ -149,7 +156,7 @@ fi
 
 # Zip exportdata Folder
 
-if [ "$1" == "zip" ] || [ "$2" == "zip" ] || [ "$3" == "zip" ] || [ "$4" == "zip" ] || [ "$5" == "zip" ] || [ "$6" == "zip" ]; then
+if [ $ALL ] || [ "$1" == "zip" ] || [ "$2" == "zip" ] || [ "$3" == "zip" ] || [ "$4" == "zip" ] || [ "$5" == "zip" ] || [ "$6" == "zip" ]; then
   echo ""
   echo ""
   echo -e "\033[36m Zipping Files \033[0m"
