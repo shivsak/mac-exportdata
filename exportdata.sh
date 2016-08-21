@@ -82,8 +82,34 @@ fi
 echo ""
 
 
-#Zip
-#!/bin/bash
+
+# iOS Backups
+echo "------------------------------"
+echo ""
+echo -e "\033[36m iOS Backups \033[0m"
+echo ""
+echo "Checking if iOS backups exist"
+
+IOS=~/"Library/Application Support/MobileSync/Backup"
+
+if [ ! -d $IOS ]
+then
+  echo "directory " $IOS " does not exist.";
+else
+  echo "directory " $IOS " exists.";
+  cp -a "$IOS" ~/"Desktop/exportdata/iOS"
+  echo "$IOS copied to ~/Desktop/exportdata";
+  echo ""
+  echo -e "\033[32mDone! \033[0m"
+fi
+
+echo ""
+
+
+
+
+
+# Zip exportdata Folder
 if [ "$1" == "zip" ]; then
   echo ""
   echo ""
