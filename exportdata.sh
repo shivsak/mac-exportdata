@@ -62,7 +62,7 @@ echo ""
 # Google Chrome
 echo "------------------------------"
 echo ""
-echo -e "\033[36m Google Chrome \033[0m"
+echo -e "\033[36m GOOGLE CHROME \033[0m"
 echo ""
 echo "Checking if Safari backup exists"
 
@@ -80,3 +80,14 @@ else
 fi
 
 echo ""
+
+
+#Zip
+#!/bin/bash
+if [ "$1" == "zip" ]; then
+  echo ""
+  echo ""
+  echo -e "\033[36m Zipping Files \033[0m"
+  echo ""
+  zip -r ~/"Desktop/exportdata.zip" ~/"Desktop/exportdata/"
+fi
